@@ -7,6 +7,11 @@
 
    class PublikasiController extends Controller
    {
+public function destroy($id)
+{
+    Publikasi::findOrFail($id)->delete();
+    return redirect('/publikasi');
+}    
        public function index()
        {
            $publikasi = Publikasi::all();
@@ -38,4 +43,3 @@
            return redirect('/publikasi');
        }
    }
-   

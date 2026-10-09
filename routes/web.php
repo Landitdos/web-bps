@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/publikasi', [PublikasiController::class, 'index']);
    Route::get('/publikasi/create', [PublikasiController::class, 'create']);
    Route::post('/publikasi', [PublikasiController::class, 'store']);
+   Route::delete('/publikasi/{id}', [PublikasiController::class, 'destroy']);

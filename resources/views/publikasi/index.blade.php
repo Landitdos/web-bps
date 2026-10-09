@@ -36,7 +36,12 @@ scale=1.0">
            </td>
            <td>
                <a href="#" class="btn btn-warning btn-sm">Edit</a>
-               <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+<form action="/publikasi/{{ $item->id }}" method="POST" class="d-inline"
+      onsubmit="return confirm('Hapus data ini?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+</form>
            </td>
        </tr>
    @endforeach
